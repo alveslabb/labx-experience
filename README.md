@@ -1,6 +1,12 @@
 # 🧪 Labx Experience
 #  Sistema de Gerenciamento de Laboratório Escolar
 
+## 📊 Apresentação do Projeto
+
+Acesse a apresentação clicando no link abaixo:
+
+🔗 [Clique aqui para ver a apresentação](https://canva.link/7tsk5sk2786oxz5)
+
 ## 📌 Descrição
 Este projeto tem como objetivo desenvolver um sistema para organizar o uso do laboratório da escola de forma eficiente.
 
