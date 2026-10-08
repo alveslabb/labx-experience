@@ -20,6 +20,10 @@ O principal objetivo do projeto é:
 
 ---
 
+
+#Mer e Der
+![DER](prints/DER.png)
+![MER](prints/mer.drawio.png)
 ## ⚙️ Funcionalidades
 
 ## 👤 Cadastro de Usuários
