@@ -4,7 +4,7 @@ O LabX Experience é um sistema desenvolvido para organizar e incentivar o uso d
 O projeto busca facilitar o gerenciamento do laboratório através de agendamentos, controle de atividades, ranking de turmas e acompanhamento do uso do ambiente escolar.
 
 ---
-# 🌐 Nosso site
+# 🌐 Nosso site do canva
 
 [LABX EXPERIENCE](https://tobiasportifolio.my.canva.site/labxexperience)
 ---
