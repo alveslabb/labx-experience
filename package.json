@@ -1,0 +1,25 @@
+{
+  "name": "labx-experience",
+  "version": "1.0.0",
+  "description": "O LabX Experience é um sistema desenvolvido para organizar e incentivar o uso dos laboratórios escolares de Física, Química e Biologia, permitindo agendamentos, registro de atividades, ranking de turmas e acompanhamento do desempenho dos alunos de forma prática e interativa.\r O projeto busca facilitar o gerenciamento do laboratório através de agendamentos, controle de atividades, ranking de turmas e acompanhamento do uso do ambiente escolar.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alveslabb/labx-experience.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/alveslabb/labx-experience/issues"
+  },
+  "homepage": "https://github.com/alveslabb/labx-experience#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
