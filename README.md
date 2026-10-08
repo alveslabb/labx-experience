@@ -97,7 +97,7 @@ Com isso, o LabX Experience foi criado para tornar as aulas mais dinâmicas, org
 ## 👨‍💻 Desenvolvedores
 
 - Colaboração cada integrante no grupo
-- Tobias: (readme, fez 3 wirefreme, 3 diagrama, ajudou a fazer a apresentação, colocou as coisas no github, fez o site do canva)
-- Pedro(fez o pdf e toda a parte escrita, requisitos funcionais e não funcionais, 5 wifreme, 5 diagrama, tabelas excel)
-- Victor(fez a maior parte da apresentação do canva, 2 wifreme, 2 diagrama, fez o site do canva)
-- Gustavo(ajudou a fazer a apresentação, ajudou no readme, ajudou nas tabelas)Projeto desenvolvido por **Tobias Bueno**.
+- Tobias: (readme, fez 3 wirefreme, 3 diagrama, ajudou a fazer a apresentação, colocou as coisas no github, fez o site do canva, banco de dados)
+- Pedro(fez o pdf e toda a parte escrita, requisitos funcionais e não funcionais, 5 wifreme, 5 diagrama, tabelas excel, style.css)
+- Victor(fez a maior parte da apresentação do canva, 2 wifreme, 2 diagrama, fez o site do canva, index.html)
+- Gustavo(ajudou a fazer a apresentação, ajudou no readme, ajudou nas tabelas, DER)
