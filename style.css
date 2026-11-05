@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -15,8 +16,8 @@ body {
 }
 
 header {
-    height: 90px;
-    padding: 0 8%;
+    min-height: 90px;
+    padding: 15px 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,7 +36,8 @@ header {
 
 nav {
     display: flex;
-    gap: 25px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -94,6 +96,8 @@ h1 span {
     color: #061a38;
     text-decoration: none;
     font-weight: bold;
+    border: none;
+    cursor: pointer;
     transition: .3s;
 }
 
@@ -219,6 +223,51 @@ section {
     color: #526579;
 }
 
+/* PARTICIPANTES */
+
+.participantes {
+    background: #f4f8fc;
+}
+
+.participantes > p {
+    color: #526579;
+    line-height: 1.6;
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 30px;
+    background: white;
+    border: 1px solid #d7e3ef;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 18px;
+    text-align: left;
+    border-bottom: 1px solid #d7e3ef;
+}
+
+th {
+    background: #061a38;
+    color: white;
+}
+
+td {
+    color: #526579;
+}
+
+tbody tr:hover {
+    background: #edf6ff;
+}
+
+/* CADASTRO */
+
 .contato {
     text-align: center;
     background: #e8f1fa;
@@ -235,11 +284,40 @@ section {
     line-height: 1.6;
 }
 
+#formCadastro {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#formCadastro input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    font-size: 15px;
+    outline: none;
+}
+
+#formCadastro input:focus {
+    border-color: #29a9ff;
+}
+
+#formCadastro button {
+    width: 100%;
+}
+
 footer {
     padding: 30px;
     text-align: center;
     background: #061a38;
     color: #cbd5e1;
+}
+
+footer p {
+    margin: 5px;
 }
 
 @media (max-width: 900px) {
@@ -252,7 +330,6 @@ footer {
     }
 
     nav {
-        flex-wrap: wrap;
         justify-content: center;
     }
 
@@ -294,4 +371,105 @@ footer {
     .titulo h2 {
         font-size: 30px;
     }
+
+    section {
+        padding: 60px 7%;
+    }
+
+    .contato h2 {
+        font-size: 32px;
+    }
 }
+
+/* BOTÕES DA TABELA */
+
+.acoes {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-editar,
+.btn-excluir {
+    padding: 9px 13px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-editar {
+    background: #29a9ff;
+    color: #061a38;
+}
+
+.btn-editar:hover {
+    background: #087ac5;
+    color: white;
+}
+
+.btn-excluir {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-excluir:hover {
+    background: #a71d2a;
+}
+
+@media (max-width: 600px) {
+    th, td {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+}
+
+/* LABORATÓRIOS */
+
+.laboratorios {
+    background: #e8f1fa;
+}
+
+.laboratorios > p {
+    color: #526579;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+#formLaboratorio {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#formLaboratorio input,
+#formLaboratorio select,
+#formLaboratorio textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    outline: none;
+}
+
+#formLaboratorio input:focus,
+#formLaboratorio select:focus,
+#formLaboratorio textarea:focus {
+    border-color: #29a9ff;
+}
+
+#formLaboratorio textarea {
+    resize: vertical;
+}
+
+#formLaboratorio button {
+    width: 100%;
+}
+
