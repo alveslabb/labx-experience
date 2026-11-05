@@ -68,4 +68,18 @@ INSERT INTO aluno_turma
 (aluno_id, turma_id)
 VALUES
 (4, 1),
-(5, 1);
+(5, 1);-- Tres novos usuarios adicionados
+INSERT INTO usuario (nome, email, senha, tipo)
+VALUES
+('Professor Carlos', 'carlos@labx.com', '123456', 'PROFESSOR'),
+('Aluna Ana', 'ana@labx.com', '123456', 'ALUNO'),
+('Aluno Lucas', 'lucas@labx.com', '123456', 'ALUNO');
+
+-- Vinculos dos novos usuarios com as turmas
+INSERT INTO professor_turma (professor_id, turma_id)
+VALUES (6, 3);
+
+INSERT INTO aluno_turma (aluno_id, turma_id)
+VALUES
+(7, 2),
+(8, 3);

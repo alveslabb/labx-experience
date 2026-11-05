@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS labx_experience;
+CREATE DATABASE labx_experience;
+
 USE labx_experience;
 
 CREATE TABLE usuario (
