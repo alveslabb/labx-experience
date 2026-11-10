@@ -1,19 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>LabX Experience</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-
         <div class="logo">
             LAB<span>X</span>
         </div>
@@ -23,17 +21,19 @@
             <a href="#sobre">Sobre</a>
             <a href="#funcionalidades">Funcionalidades</a>
             <a href="#experiencia">Experiência</a>
+            <a href="#participantes">Participantes</a>
+            <a href="#laboratorios">Laboratórios</a>
             <a href="#contato">Contato</a>
         </nav>
-
     </header>
 
     <main>
 
+        <!-- INÍCIO -->
+
         <section id="inicio" class="banner">
 
             <div class="banner-texto">
-
                 <p class="pequeno">SESI LAB</p>
 
                 <h1>
@@ -50,7 +50,6 @@
                 <a href="#sobre" class="botao">
                     CONHEÇA O PROJETO
                 </a>
-
             </div>
 
             <div class="numero">
@@ -58,6 +57,8 @@
             </div>
 
         </section>
+
+        <!-- SOBRE -->
 
         <section id="sobre" class="sobre">
 
@@ -92,6 +93,8 @@
 
         </section>
 
+        <!-- FUNCIONALIDADES -->
+
         <section id="funcionalidades" class="funcionalidades">
 
             <div class="titulo">
@@ -103,45 +106,34 @@
 
                 <article class="card">
                     <span>01</span>
-
                     <h3>AGENDA</h3>
-
                     <p>
                         Os alunos podem consultar as aulas e verificar
                         quais laboratórios estão sendo utilizados.
                     </p>
                 </article>
 
-
                 <article class="card">
                     <span>02</span>
-
                     <h3>AGENDAMENTO</h3>
-
                     <p>
                         Professores podem reservar laboratórios de forma
                         simples e organizada.
                     </p>
                 </article>
 
-
                 <article class="card">
                     <span>03</span>
-
                     <h3>RANKING</h3>
-
                     <p>
                         As turmas podem acompanhar um ranking baseado
                         no comportamento e cuidado com os laboratórios.
                     </p>
                 </article>
 
-
                 <article class="card">
                     <span>04</span>
-
                     <h3>ORGANIZAÇÃO</h3>
-
                     <p>
                         A escola consegue controlar melhor a utilização
                         dos espaços e evitar conflitos de horários.
@@ -151,6 +143,8 @@
             </div>
 
         </section>
+
+        <!-- EXPERIÊNCIA -->
 
         <section id="experiencia" class="experiencia">
 
@@ -163,7 +157,6 @@
 
                 <div>
                     <h3>MAIS ORGANIZAÇÃO</h3>
-
                     <p>
                         O LabX ajuda a escola a organizar os horários
                         e melhorar o aproveitamento dos laboratórios.
@@ -172,7 +165,6 @@
 
                 <div>
                     <h3>MAIS PARTICIPAÇÃO</h3>
-
                     <p>
                         Os alunos acompanham suas aulas e podem
                         participar de uma experiência mais organizada.
@@ -181,7 +173,6 @@
 
                 <div>
                     <h3>MAIS INOVAÇÃO</h3>
-
                     <p>
                         Transformamos laboratórios pouco utilizados
                         em espaços de aprendizagem, criatividade
@@ -192,54 +183,163 @@
             </div>
 
         </section>
- 
+
+        <!-- PARTICIPANTES -->
+
+        <section id="participantes" class="participantes">
+
+            <div class="titulo">
+                <span>04</span>
+                <h2>Participantes cadastrados</h2>
+            </div>
+
+            <p>
+                Confira os participantes registrados no LabX Experience.
+            </p>
+
+            <div class="tabela-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Turma</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaParticipantes">
+                        <tr>
+                            <td colspan="5">Carregando participantes...</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- LABORATÓRIOS -->
+
+        <section id="laboratorios" class="laboratorios">
+
+            <div class="titulo">
+                <span>05</span>
+                <h2>Cadastro de Laboratórios</h2>
+            </div>
+
+            <p>
+                Cadastre e consulte os laboratórios disponíveis na escola.
+            </p>
+
+            <form id="formLaboratorio">
+
+                <input
+                    type="text"
+                    id="nomeLaboratorio"
+                    placeholder="Nome do laboratório"
+                    required
+                >
+
+                <select id="areaLaboratorio" required>
+                    <option value="">Selecione a área</option>
+                    <option value="FISICA">Física</option>
+                    <option value="QUIMICA">Química</option>
+                    <option value="BIOLOGIA">Biologia</option>
+                </select>
+
+                <input
+                    type="number"
+                    id="capacidadeLaboratorio"
+                    placeholder="Capacidade de alunos"
+                    min="1"
+                    required
+                >
+
+                <textarea
+                    id="descricaoLaboratorio"
+                    placeholder="Descrição do laboratório"
+                    rows="4"
+                ></textarea>
+
+                <button type="submit" class="botao">
+                    CADASTRAR LABORATÓRIO
+                </button>
+
+            </form>
+
+            <div class="titulo">
+                <h2>Laboratórios cadastrados</h2>
+            </div>
+
+            <div class="tabela-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Área</th>
+                            <th>Capacidade</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaLaboratorios">
+                        <tr>
+                            <td colspan="4">
+                                Os laboratórios serão exibidos aqui.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- CONTATO -->
+
         <section id="contato" class="contato">
 
-    <p class="pequeno">LABX EXPERIENCE</p>
+            <p class="pequeno">LABX EXPERIENCE</p>
 
-    <h2>
-        CADASTRE-SE NO LABX
-    </h2>
+            <h2>CADASTRE-SE NO LABX</h2>
 
-    <p>
-        Preencha seus dados para participar do LabX Experience.
-    </p>
+            <p>
+                Preencha seus dados para participar do LabX Experience.
+            </p>
 
-    <form id="formCadastro">
+            <form id="formCadastro">
 
-        <input type="text" id="nome" placeholder="Nome" required>
+                <input type="text" id="nome" placeholder="Nome" required>
 
-        <input type="email" id="email" placeholder="E-mail" required>
+                <input type="email" id="email" placeholder="E-mail" required>
 
-        <input type="text" id="telefone" placeholder="Telefone" required>
+                <input type="text" id="telefone" placeholder="Telefone" required>
 
-        <input type="text" id="turma" placeholder="Turma" required>
+                <input type="text" id="turma" placeholder="Turma" required>
 
-        <button type="submit" class="botao">
-            CADASTRAR
-        </button>
+                <button type="submit" class="botao">
+                    CADASTRAR
+                </button>
 
-    </form>
+            </form>
 
-</section>
+        </section>
 
     </main>
 
     <footer>
 
-        <p>
-            LABX EXPERIENCE © 2026
-        </p>
+        <p>LABX EXPERIENCE © 2026</p>
 
-        <p>
-            Tecnologia para educação e inovação.
-        </p>
+        <p>Tecnologia para educação e inovação.</p>
 
     </footer>
 
     <script src="script.js"></script>
 
-
 </body>
-
 </html>
