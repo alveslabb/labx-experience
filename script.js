@@ -1,4 +1,3 @@
-
 const form = document.querySelector("#formCadastro")
 const lista = document.querySelector("#listaParticipantes")
 
@@ -231,32 +230,37 @@ async function excluirParticipante(id) {
 
 listarParticipantes()
 
+
 // LABORATÓRIOS
 
-const formLaboratorio = document.querySelector("#formLaboratorio");
-const listaLaboratorios = document.querySelector("#listaLaboratorios");
+const formLaboratorio = document.querySelector("#formLaboratorio")
+const listaLaboratorios = document.querySelector("#listaLaboratorios")
 
-// Listar laboratórios
+// LISTAR LABORATÓRIOS
+
 async function listarLaboratorios() {
 
     try {
-        const resposta = await fetch("http://localhost:3000/laboratorios");
+
+        const resposta = await fetch("http://localhost:3000/laboratorios")
 
         if (!resposta.ok) {
-            throw new Error("Erro ao buscar laboratórios");
+            throw new Error("Erro ao buscar laboratórios")
         }
 
-        const laboratorios = await resposta.json();
+        const laboratorios = await resposta.json()
 
-        listaLaboratorios.innerHTML = "";
+        listaLaboratorios.innerHTML = ""
 
         if (laboratorios.length === 0) {
+
             listaLaboratorios.innerHTML = `
                 <tr>
-                    <td colspan="4">Nenhum laboratório cadastrado.</td>
+                    <td colspan="5">Nenhum laboratório cadastrado.</td>
                 </tr>
-            `;
-            return;
+            `
+
+            return
         }
 
         laboratorios.forEach(laboratorio => {
@@ -267,32 +271,41 @@ async function listarLaboratorios() {
                     <td>${laboratorio.area}</td>
                     <td>${laboratorio.capacidade}</td>
                     <td>${laboratorio.descricao || "Sem descrição"}</td>
+                    <td>
+                        <button class="btn-editar" onclick="editarLaboratorio(${laboratorio.id})">Editar</button>
+                        <button class="btn-excluir" onclick="excluirLaboratorio(${laboratorio.id})">Excluir</button>
+                    </td>
                 </tr>
-            `;
+            `
 
-        });
+        })
 
     } catch (erro) {
-        console.log("Erro:", erro);
+
+        console.log("Erro:", erro)
+
         listaLaboratorios.innerHTML = `
             <tr>
-                <td colspan="4">Não foi possível carregar os laboratórios.</td>
+                <td colspan="5">Não foi possível carregar os laboratórios.</td>
             </tr>
-        `;
+        `
+
     }
+
 }
 
-// Cadastrar laboratório
+// CADASTRAR LABORATÓRIO
+
 formLaboratorio.addEventListener("submit", async (evento) => {
 
-    evento.preventDefault();
+    evento.preventDefault()
 
     const laboratorio = {
         nome: document.querySelector("#nomeLaboratorio").value,
         area: document.querySelector("#areaLaboratorio").value,
         capacidade: Number(document.querySelector("#capacidadeLaboratorio").value),
         descricao: document.querySelector("#descricaoLaboratorio").value
-    };
+    }
 
     try {
 
@@ -302,24 +315,131 @@ formLaboratorio.addEventListener("submit", async (evento) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(laboratorio)
-        });
+        })
 
         if (!resposta.ok) {
-            throw new Error("Erro ao cadastrar laboratório");
+            throw new Error("Erro ao cadastrar laboratório")
         }
 
-        alert("Laboratório cadastrado com sucesso!");
+        alert("Laboratório cadastrado com sucesso!")
 
-        formLaboratorio.reset();
+        formLaboratorio.reset()
 
-        listarLaboratorios();
+        listarLaboratorios()
 
     } catch (erro) {
-        console.log("Erro:", erro);
-        alert("Não foi possível cadastrar. Verifique se o backend está funcionando.");
+
+        console.log("Erro:", erro)
+
+        alert("Não foi possível cadastrar. Verifique se o backend está funcionando.")
+
     }
 
-});
+})
 
-// Carregar laboratórios ao abrir a página
-listarLaboratorios();
+// EDITAR LABORATÓRIO
+
+async function editarLaboratorio(id) {
+
+    const resposta = await fetch("http://localhost:3000/laboratorios")
+
+    const laboratorios = await resposta.json()
+
+    const laboratorio = laboratorios.find(item => item.id == id)
+
+    if (!laboratorio) {
+        alert("Laboratório não encontrado.")
+        return
+    }
+
+    const nome = prompt("Digite o novo nome:", laboratorio.nome)
+
+    if (nome === null) return
+
+    const area = prompt("Digite a nova área:", laboratorio.area)
+
+    if (area === null) return
+
+    const capacidade = prompt("Digite a nova capacidade:", laboratorio.capacidade)
+
+    if (capacidade === null) return
+
+    const descricao = prompt("Digite a nova descrição:", laboratorio.descricao)
+
+    if (descricao === null) return
+
+    if (!nome.trim() || !area.trim() || !capacidade.trim() || !descricao.trim()) {
+        alert("Preencha todos os campos.")
+        return
+    }
+
+    const dados = {
+        nome,
+        area,
+        capacidade: Number(capacidade),
+        descricao
+    }
+
+    try {
+
+        const resposta = await fetch(`http://localhost:3000/laboratorios/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dados)
+        })
+
+        if (!resposta.ok) {
+            throw new Error("Erro ao editar laboratório")
+        }
+
+        alert("Laboratório atualizado com sucesso!")
+
+        listarLaboratorios()
+
+    } catch (erro) {
+
+        console.log("Erro:", erro)
+
+        alert("Não foi possível editar o laboratório.")
+
+    }
+
+}
+
+// EXCLUIR LABORATÓRIO
+
+async function excluirLaboratorio(id) {
+
+    const confirmar = confirm("Tem certeza que deseja excluir este laboratório?")
+
+    if (!confirmar) return
+
+    try {
+
+        const resposta = await fetch(`http://localhost:3000/laboratorios/${id}`, {
+            method: "DELETE"
+        })
+
+        if (!resposta.ok) {
+            throw new Error("Erro ao excluir laboratório")
+        }
+
+        alert("Laboratório excluído com sucesso!")
+
+        listarLaboratorios()
+
+    } catch (erro) {
+
+        console.log("Erro:", erro)
+
+        alert("Não foi possível excluir o laboratório.")
+
+    }
+
+}
+
+// CARREGAR LABORATÓRIOS AO ABRIR A PÁGINA
+
+listarLaboratorios()
